@@ -1,6 +1,6 @@
 const express = require('express');
 const routerApi = require('./routes');
-const { logErrors, errorHandler} = require('./middlewares/error.handler')
+const { boomErrorHandler,logErrors, errorHandler} = require('./middlewares/error.handler')
 
 const app = express();
 const port = 3006;
@@ -21,6 +21,7 @@ app.get('/api/nueva-ruta',(req,res)=>
 routerApi(app);
 
 app.use(logErrors);
+app.use(boomErrorHandler);
 app.use(errorHandler);
 
 app.listen(port,() => {

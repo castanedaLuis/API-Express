@@ -24,6 +24,7 @@ const CODES_HTTP = {
         "403":"El cliente no posee los permisos necesarios para cierto contenido",
         "404":"El servidor no pudo encontrar el contenido solicitado.",
         "405":"El método solicitado es conocido por el servidor pero ha sido deshabilitado y no puede ser utilizado. ",
+        "409":"conflicto"
     },
     code500:{
         "500":"errores de los servidores,El servidor ha encontrado una situación que no sabe cómo manejarla.",
