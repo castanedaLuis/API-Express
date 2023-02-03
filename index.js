@@ -4,12 +4,15 @@ const routerApi = require('./routes');
 const app = express();
 const port = 3006;
 
+//Middleware
+app.use(express.json());
+
 app.get('/',(req,res)=>
     {
         res.send('Hola mi server en express');
     });
 
-app.get('/nueva-ruta',(req,res)=>
+app.get('/api/nueva-ruta',(req,res)=>
     {
         res.send('Hola, soy una nueva ruta');
     });
