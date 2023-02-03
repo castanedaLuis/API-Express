@@ -13,12 +13,34 @@ app.get('/nueva',( req, res) =>{
 });
 
 app.get('/products',( req, res) =>{
+    res.json([
+        {
+            name:'Camisa',
+            price: 1200
+        },
+        {
+            name:'Pantalon',
+            price: 800 
+        }
+    ]);
+});
+
+app.get('/products/:id', (req, res)=>{
+    const { id } = req.params;
     res.json({
-        id:3,
+        id,
         name:'Camisa',
         price: 1200
-    });
-});
+    },)
+})
+
+app.get('/categories/:categoryId/products/:productId', (req, res) =>{
+    const { categoryId, productId } = req.params;
+    res.json({
+        categoryId,
+        productId
+    })
+})
 
 app.listen(port,()=>{
     console.log(`Listening at http://localhost:${port}`);
