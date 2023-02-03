@@ -38,6 +38,25 @@ router.post('/', (req, res) => {
     message:"Create product",
     data: body
   });
-})
+});
+
+//PUT ó PATCH--> parcial
+router.patch('/:id', (req, res) => {
+  const { id } = req.params;
+  const body = req.body;
+  res.json({
+    message:"Update PATCH",
+    data: body,
+    id
+  });
+});
+
+router.delete('/:id', (req, res) => {
+  const { id } = req.params;
+  res.json({
+    message:"delete",
+    id
+  });
+});
 
 module.exports = router;
