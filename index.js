@@ -14,7 +14,7 @@ const port = 3006;
 app.use(express.json());
 
 //lista blanca para permitir el acceso a dominios
-const whitelist = ['http://localhost:3006','http://localhost:3030' ,'https://myapp.co'];
+const whitelist = ['http://localhost:3006','http://localhost:3030' ,'https://myapp.co', 'https://api-express-shop.up.railway.app/'];
 const options = {
   origin: (origin, callback) => {
     if (whitelist.includes(origin)) {
