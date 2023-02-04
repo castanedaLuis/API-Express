@@ -28,7 +28,10 @@ const options = {
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send('Hola mi server en express');
+  res.json({
+    "author":"José Luis Castañeda Osornio",
+    "Description":"Api en versión V1, en cual actualmente recibe peticiones (GET, POST, PUT, PATCH, DELETE, el cual se refieren a endPoints de Productos)",
+  });
 });
 
 app.get('/api/nueva-ruta', (req, res) => {
